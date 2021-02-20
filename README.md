@@ -1,2 +1,2 @@
 # dotfile
-Includes my i3 config, vimrc etc
+Includes my i3 config, nvim confif etc
