@@ -1,0 +1,23 @@
+snippet beg "begin{} / end{}" bA
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+snippet init
+cmake_minimum_required(VERSION ${1:2.8.2})
+project(${2:ProjectName})
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+find_package(${3:library})
+
+include_directories(${$3_INCLUDE_DIRS})
+
+add_subdirectory(${0:src})
+
+add_executable($2)
+
+target_link_libraries($2 ${$3_LIBRARIES})
+endsnippet
